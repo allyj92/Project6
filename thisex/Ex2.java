@@ -14,7 +14,7 @@ public class Ex2 {
 class Person{
     String name;
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
