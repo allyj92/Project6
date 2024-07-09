@@ -1,7 +1,6 @@
 package staticex;
 
 public class Quiz1 {
-
     public static void main(String[] args) {
         Card card1 = new Card();
         card1.showInfo();
@@ -9,18 +8,19 @@ public class Quiz1 {
         card2.showInfo();
         Card card3 = new Card();
         card3.showInfo();
+
     }
 }
 
 class Card{
-    static int serialNum = 100; // 카드의 수 (공통속성)
-    int cardNo; // 카드번호
-
+    int cardNum;
+    static int count = 100;
     public Card(){
-       this.cardNo = serialNum;
-       serialNum++;
+        count ++;
+        cardNum = count;
     }
 
-    public void showInfo(){System.out.println("카드번호: " + cardNo);}
-
+    public void showInfo(){
+        System.out.println("카드 번호 : " + cardNum);
+    }
 }

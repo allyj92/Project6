@@ -54,18 +54,45 @@ public class Ex1 {
 
        // 지하철에 승객을 태우는 메소드
        public void take(int money){
+
            this.money += money;
            passengerCount++;
        }
 
        // 지하철의 현재 상태
        public void showInfo() {
-           System.out.println("버스 " + lineNumber + "번의 승객은 " + passengerCount
+           System.out.println("지하철 " + lineNumber + "선의 승객은 " + passengerCount
                    + "명이고, 수입은 " + money + "입니다."
            );
        }
 
 
+   }
+
+   class Taxi{
+       String taxiNumber; // 지하철 노선번호
+       // int형은 0으로 초기화 되어 있음
+       int passengerCount; // 승객수
+       int money; // 수입
+
+       // 지하철 노선번호를 초기화하는 생성자
+       public Taxi(String taxiNumber) {
+           this.taxiNumber = taxiNumber;
+       }
+
+       // 지하철에 승객을 태우는 메소드
+       public void take(int money){
+
+           this.money += money;
+           passengerCount++;
+       }
+
+       // 지하철의 현재 상태
+       public void showInfo() {
+           System.out.println("택시 " + taxiNumber + "번의 승객은 " + passengerCount
+                   + "명이고, 수입은 " + money + "입니다."
+           );
+       }
    }
 
    class Student{
@@ -90,6 +117,19 @@ public class Ex1 {
            subway.take(1500); // 1500원 지불
            this.money -= 1500; // 가진돈 1500원을 잃음
        }
+
+       // 택시에 타서 요금을 지물하는 메소드
+       public void takeTaxi(Taxi taxi){
+
+           if (this.money < 10000) {
+               System.out.println("잔액 부족");
+               return;
+           }
+
+           taxi.take(10000); // 1000원 지불
+           this.money -= 10000; // 가진 돈 1000원을 잃음
+       }
+
        public void showInfo(){
            System.out.println(studentName + "님의 남은 돈은 " + money + "입니다.");
        }

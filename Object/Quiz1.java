@@ -17,8 +17,10 @@ public class Quiz1 {
         student2.takeSubway(subway);
 
         student1.showInfo();
-        student2.showInfo();
         bus.showInfo();
+
+
+        student2.showInfo();
         subway.showInfo();
 
 
